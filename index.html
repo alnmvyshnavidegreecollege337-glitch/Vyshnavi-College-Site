@@ -366,7 +366,7 @@
   <h2>News and Events</h2>
   <div class="gallery-wrapper">
     <button class="scroll-btn left" onclick="scrollGallery(-1)">❮</button>
-    <div class="gallery" id="campusGallery">
+    <div class="gallery" id="newsandevents">
   <img src="College board2 copy.jpg" onclick="openPopup(this)">
   <img src="PAMPHLET 2025 copy.jpg" onclick="openPopup(this)">
   <img src="4x10 flex 3 (2).jpg" onclick="openPopup(this)">
@@ -398,15 +398,17 @@
 <footer>
   <p>© 2026 ALNM'S Vyshnavi Women's Degree College, Kanigiri</p>
 </footer>
+	
 <script>
 function scrollGallery(dir){
   document.getElementById("campusGallery")
     .scrollBy({left: dir*400, behavior:"smooth"});
 }
 </script>
+	
 <script>
 function scrollGallery(dir){
-  document.getElementById("campusGallery")
+  document.getElementById("newsandevents")
     .scrollBy({left: dir*400, behavior:"smooth"});
 }
 
