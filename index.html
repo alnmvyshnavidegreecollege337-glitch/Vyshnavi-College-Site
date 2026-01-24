@@ -63,7 +63,6 @@
     section h2{
       color:#0b3c5d;
       margin-bottom:20px;
-      position:relative;
     }
     section h2::after{
       content:'';
@@ -80,8 +79,8 @@
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
       gap:20px;
-      padding:0;
       list-style:none;
+      padding:0;
     }
     .courses li{
       background:linear-gradient(135deg,#0b3c5d,#1f6aa5);
@@ -92,10 +91,31 @@
       font-weight:600;
     }
 
-    /* Staff */
-    .staff li{margin:10px 0;}
+    /* Leaders */
+    .leaders{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:25px;
+    }
+    .leader-card{
+      background:#f8f9fc;
+      padding:25px;
+      border-radius:18px;
+      text-align:center;
+      box-shadow:0 8px 20px rgba(0,0,0,.1);
+    }
+    .leader-card img{
+      width:160px;
+      height:160px;
+      object-fit:cover;
+      border-radius:50%;
+      border:6px solid #f4b400;
+      margin-bottom:15px;
+    }
+    .leader-card h3{color:#0b3c5d;margin:10px 0 5px;}
+    .leader-card p{font-size:14px;}
 
-    /* Admissions highlight */
+    /* Admissions */
     .admissions-box{
       background:linear-gradient(135deg,#f4b400,#ffdd55);
       padding:25px;
@@ -104,17 +124,44 @@
     }
 
     /* Gallery */
+    .gallery-wrapper{
+      position:relative;
+      display:flex;
+      align-items:center;
+    }
     .gallery{
       display:flex;
       gap:20px;
       overflow-x:auto;
-      padding-bottom:10px;
+      scroll-behavior:smooth;
+      padding:10px 0;
     }
+    .gallery::-webkit-scrollbar{display:none;}
     .gallery img{
       height:260px;
-      border-radius:16px;
-      box-shadow:0 8px 20px rgba(0,0,0,.2);
+      min-width:360px;
+      object-fit:cover;
+      border-radius:18px;
+      box-shadow:0 10px 25px rgba(0,0,0,.25);
+      transition:.3s;
     }
+    .gallery img:hover{transform:scale(1.05);}
+
+    .scroll-btn{
+      position:absolute;
+      background:#0b3c5d;
+      color:#fff;
+      border:none;
+      width:50px;
+      height:50px;
+      border-radius:50%;
+      font-size:26px;
+      cursor:pointer;
+      z-index:10;
+    }
+    .scroll-btn:hover{background:#f4b400;color:#000;}
+    .scroll-btn.left{left:-15px;}
+    .scroll-btn.right{right:-15px;}
 
     /* Contact */
     .btn{
@@ -125,10 +172,8 @@
       border-radius:40px;
       text-decoration:none;
       font-weight:600;
-      margin-top:10px;
     }
-
-    iframe{width:100%; border:0; border-radius:16px; margin-top:20px;}
+    iframe{width:100%;border:0;border-radius:16px;margin-top:20px;}
 
     footer{
       background:#0b3c5d;
@@ -140,124 +185,44 @@
 
     @media(max-width:600px){
       header h1{font-size:22px;}
+      .gallery img{min-width:280px;height:200px;}
+      .scroll-btn{width:40px;height:40px;font-size:22px;}
     }
-    /* Principal & Correspondent */
-.leaders{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:25px;
-  margin-top:20px;
+	#college-info{
+  background:linear-gradient(180deg,#ffffff,#f7f9fc);
 }
-
-.leader-card{
-  background:#f8f9fc;
-  padding:25px;
-  border-radius:18px;
-  text-align:center;
-  box-shadow:0 8px 20px rgba(0,0,0,.1);
-}
-
-.leader-card img{
-  width:160px;
-  height:160px;
-  object-fit:cover;
-  border-radius:50%;
-  border:6px solid #f4b400;
-  margin-bottom:15px;
-}
-
-.leader-card h3{
-  margin:10px 0 5px;
-  color:#0b3c5d;
-}
-
-.leader-card p{
-  margin:6px 0;
-  font-size:14px;
-}
-#college-info p{
-  margin-bottom:15px;
-  font-size:15px;
-}
-
 #college-info strong{
   color:#0b3c5d;
 }
-.gallery img{
-  height:260px;
-  min-width:360px;
-  object-fit:cover;
-}
-    /* Gallery Wrapper */
-.gallery-wrapper{
-  position:relative;
-  display:flex;
-  align-items:center;
-}
-
-/* Gallery */
-.gallery{
-  display:flex;
-  gap:20px;
-  overflow-x:auto;
-  scroll-behavior:smooth;
-  padding:10px 0;
-}
-
-.gallery::-webkit-scrollbar{
+/* Image Popup Fullscreen */
+.img-popup{
   display:none;
-}
-
-.gallery img{
-  height:260px;
-  min-width:360px;
-  object-fit:cover;
-  border-radius:18px;
-  box-shadow:0 10px 25px rgba(0,0,0,.25);
-  transition:transform .3s ease;
-}
-
-.gallery img:hover{
-  transform:scale(1.05);
-}
-
-/* Scroll Buttons */
-.scroll-btn{
-  background:rgba(11,60,93,.9);
-  color:#fff;
-  border:none;
-  font-size:28px;
-  width:50px;
-  height:50px;
-  border-radius:50%;
-  cursor:pointer;
-  display:flex;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,.9);
+  z-index:9999;
   align-items:center;
   justify-content:center;
+}
+
+.img-popup img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:16px;
+  box-shadow:0 10px 40px rgba(0,0,0,.6);
+}
+
+.close-btn{
   position:absolute;
-  z-index:10;
-  transition:background .3s ease, transform .2s ease;
-}
-
-.scroll-btn:hover{
-  background:#f4b400;
-  color:#000;
-  transform:scale(1.1);
-}
-
-.scroll-btn.left{left:-15px;}
-.scroll-btn.right{right:-15px;}
-
-@media(max-width:600px){
-  .gallery img{
-    min-width:280px;
-    height:200px;
-  }
-  .scroll-btn{
-    width:40px;
-    height:40px;
-    font-size:22px;
-  }
+  top:20px;
+  right:30px;
+  font-size:40px;
+  color:#fff;
+  cursor:pointer;
+  font-weight:bold;
 }
 
 
@@ -387,22 +352,18 @@
 
 <section id="gallery">
   <h2>Campus Gallery</h2>
-
   <div class="gallery-wrapper">
-    <button class="scroll-btn left" onclick="scrollGallery(-1)">&#10094;</button>
-
+    <button class="scroll-btn left" onclick="scrollGallery(-1)">❮</button>
     <div class="gallery" id="campusGallery">
-      <img src="College board2 copy.jpg" alt="College Campus">
-      <img src="PAMPHLET 2025 copy.jpg" alt="Achievements">
-      <img src="4x10 flex 3 (2).jpg" alt="Events">
-      <img src="classroom.jpg" alt="Class Rooms">
-      <img src="students.jpg" alt="Students">
-      <img src="seminar.jpg" alt="Seminar Hall">
-      <img src="lab.jpg" alt="Computer Lab">
-      <img src="campus-view.jpg" alt="Campus View">
-    </div>
+  <img src="College board2 copy.jpg" onclick="openPopup(this)">
+  <img src="PAMPHLET 2025 copy.jpg" onclick="openPopup(this)">
+  <img src="4x10 flex 3 (2).jpg" onclick="openPopup(this)">
+  <img src="classroom.jpg" onclick="openPopup(this)">
+  <img src="students.jpg" onclick="openPopup(this)">
+  <img src="lab.jpg" onclick="openPopup(this)">
+</div>
 
-    <button class="scroll-btn right" onclick="scrollGallery(1)">&#10095;</button>
+    <button class="scroll-btn right" onclick="scrollGallery(1)">❯</button>
   </div>
 </section>
 
@@ -420,6 +381,28 @@
 <footer>
   <p>© 2026 ALNM'S Vyshnavi Women's Degree College, Kanigiri</p>
 </footer>
+<script>
+function scrollGallery(dir){
+  document.getElementById("campusGallery")
+    .scrollBy({left: dir*400, behavior:"smooth"});
+}
+</script>
+<script>
+function scrollGallery(dir){
+  document.getElementById("campusGallery")
+    .scrollBy({left: dir*400, behavior:"smooth"});
+}
 
+function openPopup(img){
+  const popup = document.getElementById("imgPopup");
+  const popupImg = document.getElementById("popupImg");
+  popup.style.display = "flex";
+  popupImg.src = img.src;
+}
+
+function closePopup(){
+  document.getElementById("imgPopup").style.display = "none";
+}
+</script>
 </body>
 </html>
