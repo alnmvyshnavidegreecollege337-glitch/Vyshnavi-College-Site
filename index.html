@@ -4,27 +4,149 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ALNM'S Vyshnavi Women's Degree College | Kanigiri</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
-    body { margin:0; font-family: Arial, sans-serif; line-height:1.7; background:#f4f6f8; }
-    header { background:#0b3c5d; color:#fff; padding:15px; display:flex; align-items:center; gap:15px; }
-    header img { height:70px; }
-    nav { background:#f4b400; padding:10px; text-align:center; }
-    nav a { margin:0 12px; text-decoration:none; font-weight:bold; color:#000; }
-    section { padding:30px; background:#fff; margin:20px; border-radius:10px; }
-    h2 { color:#0b3c5d; }
-    .courses li, .staff li { margin:8px 0; }
-    .gallery { display:flex; gap:15px; overflow-x:auto; }
-    .gallery img { height:220px; border-radius:10px; }
-    footer { background:#0b3c5d; color:#fff; text-align:center; padding:15px; }
-    .btn { background:#25D366; color:#fff; padding:10px 15px; border-radius:30px; text-decoration:none; font-weight:bold; }
-    .lang { color:#555; font-size:0.95em; }
-    iframe { width:100%; border:0; border-radius:10px; }
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family:'Poppins',sans-serif;
+      background:#eef2f7;
+      line-height:1.7;
+      color:#333;
+    }
+
+    /* Header */
+    header{
+      background:linear-gradient(rgba(11,60,93,.85),rgba(11,60,93,.85)), url('College board2 copy.jpg');
+      background-size:cover;
+      background-position:center;
+      color:#fff;
+      padding:40px 20px;
+      display:flex;
+      align-items:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+    header img{height:80px; background:#fff; padding:6px; border-radius:8px;}
+    header h1{margin:0; font-size:28px;}
+
+    /* Navigation */
+    nav{
+      background:#f4b400;
+      padding:12px;
+      text-align:center;
+      position:sticky;
+      top:0;
+      z-index:100;
+    }
+    nav a{
+      margin:0 12px;
+      text-decoration:none;
+      font-weight:600;
+      color:#000;
+    }
+    nav a:hover{color:#0b3c5d;}
+
+    /* Sections */
+    section{
+      padding:40px 25px;
+      margin:25px auto;
+      max-width:1100px;
+      background:#fff;
+      border-radius:16px;
+      box-shadow:0 10px 25px rgba(0,0,0,.08);
+    }
+
+    section h2{
+      color:#0b3c5d;
+      margin-bottom:20px;
+      position:relative;
+    }
+    section h2::after{
+      content:'';
+      width:60px;
+      height:4px;
+      background:#f4b400;
+      display:block;
+      margin-top:8px;
+      border-radius:2px;
+    }
+
+    /* Courses */
+    .courses{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+      padding:0;
+      list-style:none;
+    }
+    .courses li{
+      background:linear-gradient(135deg,#0b3c5d,#1f6aa5);
+      color:#fff;
+      padding:20px;
+      border-radius:14px;
+      text-align:center;
+      font-weight:600;
+    }
+
+    /* Staff */
+    .staff li{margin:10px 0;}
+
+    /* Admissions highlight */
+    .admissions-box{
+      background:linear-gradient(135deg,#f4b400,#ffdd55);
+      padding:25px;
+      border-radius:16px;
+      font-weight:600;
+    }
+
+    /* Gallery */
+    .gallery{
+      display:flex;
+      gap:20px;
+      overflow-x:auto;
+      padding-bottom:10px;
+    }
+    .gallery img{
+      height:260px;
+      border-radius:16px;
+      box-shadow:0 8px 20px rgba(0,0,0,.2);
+    }
+
+    /* Contact */
+    .btn{
+      display:inline-block;
+      background:#25D366;
+      color:#fff;
+      padding:12px 22px;
+      border-radius:40px;
+      text-decoration:none;
+      font-weight:600;
+      margin-top:10px;
+    }
+
+    iframe{width:100%; border:0; border-radius:16px; margin-top:20px;}
+
+    footer{
+      background:#0b3c5d;
+      color:#fff;
+      text-align:center;
+      padding:20px;
+      margin-top:40px;
+    }
+
+    @media(max-width:600px){
+      header h1{font-size:22px;}
+    }
   </style>
 </head>
 <body>
 
 <header>
-  <img src="LOGO.png" alt="College Logo" />
+  <img src="LOGO.png" alt="College Logo">
   <div>
     <h1>ALNM'S Vyshnavi Women's Degree College</h1>
     <p>Kanigiri, Prakasam District</p>
@@ -43,20 +165,20 @@
 
 <section id="about">
   <h2>About College</h2>
-  <p>ALNM'S Vyshnavi Women's Degree College, Kanigiri is committed to providing quality higher education for women, fostering academic excellence, discipline, and social responsibility.</p>
+  <p>ALNM'S Vyshnavi Women's Degree College, Kanigiri is committed to providing quality higher education for women, nurturing academic excellence, discipline, leadership and social responsibility.</p>
 </section>
 
 <section id="principal">
   <h2>Principal's Message</h2>
-  <p>Our goal is to empower young women through education, discipline, and strong values, enabling them to become confident, responsible, and capable leaders of tomorrow.</p>
+  <p>We strive to empower young women through holistic education, strong moral values and career-oriented learning, enabling them to succeed with confidence in a competitive world.</p>
 </section>
 
 <section id="courses">
   <h2>Courses Offered</h2>
   <ul class="courses">
-    <li>B.Sc Honours (Computer Science)</li>
-    <li>B.Sc Honours (Zoology)</li>
-    <li>B.Com Honours (Computers)</li>
+    <li>B.Sc Honours<br>(Computer Science)</li>
+    <li>B.Sc Honours<br>(Zoology)</li>
+    <li>B.Com Honours<br>(Computers)</li>
     <li>BCA Honours</li>
   </ul>
 </section>
@@ -64,22 +186,25 @@
 <section id="staff">
   <h2>Staff Details</h2>
   <ul class="staff">
-    <li>Qualified & Experienced Faculty Members</li>
+    <li>Highly Qualified & Experienced Faculty</li>
+    <li>Student-Friendly Teaching Approach</li>
     <li>Dedicated Teaching & Non-Teaching Staff</li>
   </ul>
 </section>
 
 <section id="admissions">
-  <h2>Admissions</h2>
-  <p>Admissions are open for eligible candidates. Students are encouraged to visit the college campus or contact the office for complete admission details.</p>
+  <h2>Admissions Open</h2>
+  <div class="admissions-box">
+    Admissions are open for eligible candidates. Interested students are requested to visit the college campus or contact the office for complete admission guidance.
+  </div>
 </section>
 
 <section id="gallery">
-  <h2>Gallery</h2>
+  <h2>Campus Gallery</h2>
   <div class="gallery">
-    <img src="College board2 copy.jpg" alt="College Building" />
-    <img src="PAMPHLET 2025 copy (3).jpg" alt="Achievements" />
-    <img src="4x10 flex 3 (2).jpg" alt="Events" />
+    <img src="College board2 copy.jpg" alt="College Campus">
+    <img src="PAMPHLET 2025 copy (3).jpg" alt="Achievements">
+    <img src="4x10 flex 3 (2).jpg" alt="Events">
   </div>
 </section>
 
@@ -89,8 +214,7 @@
   <p><strong>Phone:</strong> 6304088102, 8328550713</p>
   <p><strong>Affiliation:</strong> Affiliated to Andhra Kesari University</p>
   <a class="btn" href="https://wa.me/916304088102" target="_blank">📞 WhatsApp Us</a>
-  <br><br>
-  <iframe src="https://www.google.com/maps?q=Kanigiri,Prakasam,Andhra%20Pradesh&output=embed" height="300"></iframe>
+  <iframe src="https://www.google.com/maps?q=Kanigiri,Prakasam,Andhra%20Pradesh&output=embed" height="320"></iframe>
 </section>
 
 <footer>
