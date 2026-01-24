@@ -358,7 +358,9 @@
   <img src="lab.jpg" onclick="openPopup(this)">
 </div>
 
-    <button class="scroll-btn right" onclick="scrollGallery(1)">❯</button>
+   <button class="scroll-btn left" onclick="scrollCampus(-1)">❮</button>
+<button class="scroll-btn right" onclick="scrollCampus(1)">❯</button>
+
   </div>
 </section>
 
@@ -373,15 +375,19 @@
   <img src="chirstmas.jpeg" onclick="openPopup(this)">
   <img src="deepavali.jpeg" onclick="openPopup(this)">
   <img src="holi.jpeg" onclick="openPopup(this)">
-		<img src="bhogi news1.jpeg" onclick="openPopup(this)">
+  <img src="bhogi news1.jpeg" onclick="openPopup(this)">
   <img src="church center.jpeg" onclick="openPopup(this)">
   <img src="college fest news.jpeg" onclick="openPopup(this)">
   <img src="college fest news2.jpeg" onclick="openPopup(this)">
   <img src="holi news.jpeg" onclick="openPopup(this)">
   <img src="invetation.jpeg" onclick="openPopup(this)">
+
+		
 </div>
 
-    <button class="scroll-btn right" onclick="scrollGallery(1)">❯</button>
+    <button class="scroll-btn left" onclick="scrollNews(-1)">❮</button>
+<button class="scroll-btn right" onclick="scrollNews(1)">❯</button>
+
   </div>
 </section>
 
@@ -406,16 +412,14 @@
 </footer>
 	
 <script>
-function scrollGallery(dir){
+function scrollCampus(dir){
   document.getElementById("campusGallery")
-    .scrollBy({left: dir*400, behavior:"smooth"});
+    .scrollBy({ left: dir * 400, behavior: "smooth" });
 }
-</script>
-	
-<script>
-function scrollGallery(dir){
+
+function scrollNews(dir){
   document.getElementById("newsandevents")
-    .scrollBy({left: dir*400, behavior:"smooth"});
+    .scrollBy({ left: dir * 400, behavior: "smooth" });
 }
 
 function openPopup(img){
@@ -429,5 +433,6 @@ function closePopup(){
   document.getElementById("imgPopup").style.display = "none";
 }
 </script>
+
 </body>
 </html>
