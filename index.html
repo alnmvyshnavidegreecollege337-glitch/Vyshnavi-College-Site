@@ -188,6 +188,78 @@
   min-width:360px;
   object-fit:cover;
 }
+    /* Gallery Wrapper */
+.gallery-wrapper{
+  position:relative;
+  display:flex;
+  align-items:center;
+}
+
+/* Gallery */
+.gallery{
+  display:flex;
+  gap:20px;
+  overflow-x:auto;
+  scroll-behavior:smooth;
+  padding:10px 0;
+}
+
+.gallery::-webkit-scrollbar{
+  display:none;
+}
+
+.gallery img{
+  height:260px;
+  min-width:360px;
+  object-fit:cover;
+  border-radius:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,.25);
+  transition:transform .3s ease;
+}
+
+.gallery img:hover{
+  transform:scale(1.05);
+}
+
+/* Scroll Buttons */
+.scroll-btn{
+  background:rgba(11,60,93,.9);
+  color:#fff;
+  border:none;
+  font-size:28px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:absolute;
+  z-index:10;
+  transition:background .3s ease, transform .2s ease;
+}
+
+.scroll-btn:hover{
+  background:#f4b400;
+  color:#000;
+  transform:scale(1.1);
+}
+
+.scroll-btn.left{left:-15px;}
+.scroll-btn.right{right:-15px;}
+
+@media(max-width:600px){
+  .gallery img{
+    min-width:280px;
+    height:200px;
+  }
+  .scroll-btn{
+    width:40px;
+    height:40px;
+    font-size:22px;
+  }
+}
+
 
   </style>
 </head>
@@ -313,17 +385,27 @@
   </div>
 </section>
 
-<div class="gallery">
-  <img src="College board2 copy.jpg" alt="College Campus">
-  <img src="PAMPHLET 2025 copy.jpg" alt="Achievements">
-  <img src="4x10 flex 3 (2).jpg" alt="Events">
+<section id="gallery">
+  <h2>Campus Gallery</h2>
 
-  <img src="classroom.jpg" alt="Class Rooms">
-  <img src="students.jpg" alt="Students Activity">
-  <img src="seminar.jpg" alt="Seminars">
-  <img src="lab.jpg" alt="Computer Lab">
-  <img src="campus-view.jpg" alt="Campus View">
-</div>
+  <div class="gallery-wrapper">
+    <button class="scroll-btn left" onclick="scrollGallery(-1)">&#10094;</button>
+
+    <div class="gallery" id="campusGallery">
+      <img src="College board2 copy.jpg" alt="College Campus">
+      <img src="PAMPHLET 2025 copy.jpg" alt="Achievements">
+      <img src="4x10 flex 3 (2).jpg" alt="Events">
+      <img src="classroom.jpg" alt="Class Rooms">
+      <img src="students.jpg" alt="Students">
+      <img src="seminar.jpg" alt="Seminar Hall">
+      <img src="lab.jpg" alt="Computer Lab">
+      <img src="campus-view.jpg" alt="Campus View">
+    </div>
+
+    <button class="scroll-btn right" onclick="scrollGallery(1)">&#10095;</button>
+  </div>
+</section>
+
 
 
 <section id="contact">
