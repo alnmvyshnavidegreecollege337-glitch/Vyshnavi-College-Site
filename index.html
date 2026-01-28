@@ -240,6 +240,111 @@
 #college-info, #about {
     text-align: justify;
 }
+
+/* Announcement Bar */
+.announcement-bar{
+  width:100%;
+  background:#0b3c5d;
+  overflow:hidden;
+  white-space:nowrap;
+  position:sticky;
+  top:58px; /* nav height */
+  z-index:99;
+}
+
+/* Scroll Track */
+.announcement-track{
+  display:inline-flex;
+  gap:70px;
+  padding:10px 0;
+  animation:scroll-left 28s linear infinite;
+}
+
+/* ⏸ Hover to Pause */
+.announcement-bar:hover .announcement-track{
+  animation-play-state: paused;
+}
+
+/* Individual Alerts */
+.alert{
+  font-weight:600;
+  font-size:15px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+/* 🎨 Alert Colors */
+.alert.normal{
+  color:#ffffff;
+}
+
+.alert.important{
+  color:#ffeb3b;
+}
+
+.alert.urgent{
+  color:#ff5252;
+}
+
+/* 🔔 Bell Animation */
+.bell{
+  display:inline-block;
+  animation:ring 1.5s infinite ease-in-out;
+}
+
+@keyframes ring{
+  0%{ transform:rotate(0deg); }
+  10%{ transform:rotate(15deg); }
+  20%{ transform:rotate(-15deg); }
+  30%{ transform:rotate(10deg); }
+  40%{ transform:rotate(-10deg); }
+  50%{ transform:rotate(0deg); }
+  100%{ transform:rotate(0deg); }
+}
+
+/* Scroll Animation */
+@keyframes scroll-left{
+  from{ transform:translateX(100%); }
+  to{ transform:translateX(-100%); }
+}
+
+/* Mobile */
+@media(max-width:600px){
+  .alert{
+    font-size:13px;
+  }
+}
+/* 🆕 NEW Flash Badge */
+.new-badge{
+  margin-left:10px;
+  padding:3px 10px;
+  background:#00e676;
+  color:#000;
+  font-size:12px;
+  font-weight:800;
+  border-radius:12px;
+  letter-spacing:1px;
+  animation:newFlash 1s infinite;
+  vertical-align:middle;
+}
+
+/* Flash Animation */
+@keyframes newFlash{
+  0%{
+    transform:scale(1);
+    opacity:1;
+  }
+  50%{
+    transform:scale(1.2);
+    opacity:.6;
+  }
+  100%{
+    transform:scale(1);
+    opacity:1;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -262,6 +367,33 @@
   <a href="#contact">Contact</a>
 </nav>
 
+
+<!-- Announcements Bar -->
+<div class="announcement-bar">
+  <div class="announcement-track">
+
+    <span class="alert normal">
+      <i class="bell">🔔</i> Admissions Open for 2026 Academic Year
+    </span>
+
+    <span class="alert important">
+      <i class="bell">🔔</i> Limited Seats Available – Apply Early
+    </span>
+
+    <span class="alert normal">
+      <i class="bell">🔔</i> B.Sc, B.Com & BCA Honours Courses
+    </span>
+
+    <span class="alert urgent">
+      <i class="bell">🔔</i> Contact Now: 6304088102 | 8328550713
+    </span>
+
+  </div>
+</div>
+<div class="emergency-alert">
+  🚨 Admissions Open for 2026 Academic Year 
+  <span class="new-badge">NEW</span>
+</div>
 <section id="about">
   <h2>About College</h2>
   <p>ALNM'S Vyshnavi Women's Degree College, Kanigiri is committed to providing quality higher education for women, nurturing academic excellence, discipline, leadership and social responsibility.</p>
@@ -389,7 +521,6 @@ PAMPHLET CENTER.jpg" onclick="openPopup(this)">
   <div class="gallery-wrapper">
     <button class="scroll-btn left" onclick="scrollGallery(-1)">❮</button>
     <div class="gallery" id="newsandevents">
-		<img src="sankranthi2026.jpeg" onclick="openPopup(this, 'newsandevents')">
   <img src="bhogi news1.jpeg" onclick="openPopup(this, 'newsandevents')">
 <img src="chirstmas.jpeg" onclick="openPopup(this, 'newsandevents')">
 <img src="church center.jpeg" onclick="openPopup(this, 'newsandevents')">
