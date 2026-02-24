@@ -1,619 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ALNM Women's Degree College Kanigiri | Leadership & Excellence</title>
 
-  <title>
-    ALNM Women's Degree College Kanigiri | ALNM's Vyshnavi Women's Degree College
-  </title>
-
-  <!-- ✅ Google Search Console Verification (HTML TAG METHOD) -->
-  <meta name="google-site-verification" content="PmZRFIfFVThYFCwS3TxymrUfzrZyMxpllZsMAwM5xbw" />
-
-  <!-- SEO -->
-  <meta name="description" content="ALNM Women's Degree College Kanigiri also known as ALNM's Vyshnavi Women's Degree College Kanigiri. Best women's degree college in Kanigiri." />
-
-  <meta name="keywords" content="ALNM WOMEN'S DEGREE COLLEGE, ALNM'S VYSHNAVI WOMEN'S DEGREE COLLEGE KANIGIRI, VYSHNAVI WOMEN'S DEGREE COLLEGE KANIGIRI, DEGREE COLLEGE KANIGIRI, WOMENS DEGREE COLLEGE KANIGIRI, KANIGIRI DEGREE COLLEGE" />
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-	
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <style>
-    *{box-sizing:border-box;}
-    body{
-      margin:0;
-      font-family:'Poppins',sans-serif;
-      background:#eef2f7;
-      line-height:1.7;
-      color:#333;
+    :root {
+      --primary: #0b3c5d;
+      --secondary: #f4b400;
+      --accent: #ff5252;
+      --light: #f8f9fc;
+      --white: #ffffff;
+      --insta: #E1306C;
+      --shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
 
-    /* Header */
-    header{
-      background:linear-gradient(rgba(11,60,93,.85),rgba(11,60,93,.85)), url('College Building.png');
-      background-size:cover;
-      background-position:center;
-      color:#fff;
-      padding:40px 20px;
-      display:flex;
-      align-items:center;
-      gap:20px;
-      flex-wrap:wrap;
+    * { box-sizing: border-box; transition: all 0.3s ease; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: 'Poppins', sans-serif; background: #f4f7f9; color: #333; overflow-x: hidden; }
+
+    /* --- Hero Header --- */
+    header {
+      background: linear-gradient(135deg, rgba(11,60,93,0.9), rgba(11,60,93,0.7)), url('College Building.png');
+      background-size: cover; background-position: center; background-attachment: fixed;
+      color: var(--white); padding: 100px 20px; text-align: center; border-bottom: 8px solid var(--secondary);
     }
-    header img{height:80px; background:#fff; padding:6px; border-radius:8px;}
-    header h1{margin:0; font-size:35px;}
+    header img { height: 120px; background: var(--white); padding: 12px; border-radius: 50%; box-shadow: 0 5px 20px rgba(0,0,0,0.3); margin-bottom: 20px; }
+    header h1 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 6vw, 52px); margin: 0; }
 
-    /* Navigation */
-    nav{
-      background:#f4b400;
-      padding:12px;
-      text-align:center;
-      position:sticky;
-      top:0;
-      z-index:100;
+    /* --- Navigation --- */
+    nav { background: var(--white); display: flex; justify-content: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    nav a { text-decoration: none; font-weight: 500; color: var(--primary); font-size: 14px; padding: 20px 15px; position: relative; }
+    nav a:hover { color: var(--secondary); }
+
+    /* --- Stats Section --- */
+    .stats-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); background: var(--primary); color: white; padding: 40px 20px; text-align: center; }
+    .stat-item h3 { font-size: 2.5rem; margin: 0; color: var(--secondary); }
+
+    /* --- Sections --- */
+    section { padding: 80px 20px; margin: 40px auto; max-width: 1200px; background: var(--white); border-radius: 30px; box-shadow: var(--shadow); }
+    h2 { text-align: center; color: var(--primary); font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 50px; }
+    h2::after { content: ''; width: 60px; height: 5px; background: var(--secondary); display: block; margin: 15px auto; border-radius: 10px; }
+
+    /* --- Leadership Cards (New & Improved) --- */
+    .leadership-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
     }
-    nav a{
-      margin:0 12px;
-      text-decoration:none;
-      font-weight:600;
-      color:#000;
+    .leader-card {
+      background: var(--light);
+      padding: 40px 30px;
+      border-radius: 25px;
+      text-align: center;
+      border: 1px solid rgba(0,0,0,0.05);
+      position: relative;
+      overflow: hidden;
     }
-    nav a:hover{color:#0b3c5d;}
-
-    /* Sections */
-    section{
-      padding:40px 25px;
-      margin:25px auto;
-      max-width:1100px;
-      background:#fff;
-      border-radius:16px;
-      box-shadow:0 10px 25px rgba(0,0,0,.08);
+    .leader-card::before {
+      content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 8px; background: var(--secondary);
     }
-
-    section h2{
-      color:#0b3c5d;
-      margin-bottom:20px;
+    .leader-card img {
+      width: 180px; height: 180px; border-radius: 50%; object-fit: cover;
+      border: 6px solid var(--white); box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
     }
-    section h2::after{
-      content:'';
-      width:60px;
-      height:4px;
-      background:#f4b400;
-      display:block;
-      margin-top:8px;
-      border-radius:2px;
+    .leader-card h3 { color: var(--primary); font-size: 24px; margin: 10px 0 5px 0; }
+    .leader-card .designation { color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 14px; margin-bottom: 15px; display: block; }
+    .leader-card p { font-style: italic; color: #666; line-height: 1.6; }
+
+    /* --- Gallery Style --- */
+    .gallery-wrapper { position: relative; overflow: hidden; }
+    .gallery { display: flex; gap: 20px; overflow-x: auto; scroll-behavior: smooth; padding: 20px 0; scrollbar-width: none; }
+    .gallery::-webkit-scrollbar { display: none; }
+    .gallery img { height: 280px; min-width: 350px; object-fit: cover; border-radius: 20px; cursor: pointer; }
+    
+    .scroll-btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: var(--primary); color: white; border: none;
+      width: 50px; height: 50px; border-radius: 50%; cursor: pointer; z-index: 5;
     }
+    .scroll-btn.left { left: 5px; }
+    .scroll-btn.right { right: 5px; }
 
-    /* Courses */
-    .courses{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:20px;
-      list-style:none;
-      padding:0;
-    }
-    .courses li{
-      background:linear-gradient(135deg,#0b3c5d,#1f6aa5);
-      color:#fff;
-      padding:20px;
-      border-radius:14px;
-      text-align:center;
-      font-weight:600;
-    }
+    /* --- Floating Buttons --- */
+    .social-float { position: fixed; right: 20px; bottom: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 2000; }
+    .float-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 28px; text-decoration: none; box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+    .whatsapp { background: #25D366; animation: pulse 2s infinite; }
+    .instagram { background: linear-gradient(45deg, #f09433, #e1306c, #bc1888); }
 
-    /* Leaders */
-    .leaders{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:25px;
-    }
-    .leader-card{
-      background:#f8f9fc;
-      padding:25px;
-      border-radius:18px;
-      text-align:center;
-      box-shadow:0 8px 20px rgba(0,0,0,.1);
-    }
-    .leader-card img{
-      width:160px;
-      height:160px;
-      object-fit:cover;
-      border-radius:50%;
-      border:6px solid #f4b400;
-      margin-bottom:15px;
-    }
-    .leader-card h3{color:#0b3c5d;margin:10px 0 5px;}
-    .leader-card p{font-size:14px;}
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
 
-    /* Admissions */
-    .admissions-box{
-      background:linear-gradient(135deg,#f4b400,#ffdd55);
-      padding:25px;
-      border-radius:16px;
-      font-weight:600;
-    }
-
-    /* Gallery */
-    .gallery-wrapper{
-      position:relative;
-      display:flex;
-      align-items:center;
-    }
-    .gallery{
-      display:flex;
-      gap:20px;
-      overflow-x:auto;
-      scroll-behavior:smooth;
-      padding:10px 0;
-    }
-    .gallery::-webkit-scrollbar{display:none;}
-    .gallery img{
-      height:260px;
-      min-width:360px;
-      object-fit:cover;
-      border-radius:18px;
-      box-shadow:0 10px 25px rgba(0,0,0,.25);
-      transition:.3s;
-    }
-    .gallery img:hover{transform:scale(1.05);}
-
-    .scroll-btn{
-      position:absolute;
-      background:#0b3c5d;
-      color:#fff;
-      border:none;
-      width:50px;
-      height:50px;
-      border-radius:50%;
-      font-size:26px;
-      cursor:pointer;
-      z-index:10;
-    }
-    .scroll-btn:hover{background:#f4b400;color:#000;}
-    .scroll-btn.left{left:-15px;}
-    .scroll-btn.right{right:-15px;}
-
-    /* Contact */
-    .btn{
-      display:inline-block;
-      background:#25D366;
-      color:#fff;
-      padding:12px 22px;
-      border-radius:40px;
-      text-decoration:none;
-      font-weight:600;
-    }
-    iframe{width:100%;border:0;border-radius:16px;margin-top:20px;}
-
-    footer{
-      background:#0b3c5d;
-      color:#fff;
-      text-align:center;
-      padding:20px;
-      margin-top:40px;
-    }
-
-    @media(max-width:600px){
-      header h1{font-size:22px;}
-      .gallery img{min-width:280px;height:200px;}
-      .scroll-btn{width:40px;height:40px;font-size:22px;}
-    }
-	#college-info{
-  background:linear-gradient(180deg,#ffffff,#f7f9fc);
-}
-#college-info strong{
-  color:#0b3c5d;
-}
-/* Image Popup Fullscreen */
-.img-popup{
-  display:none;
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,.9);
-  z-index:9999;
-  align-items:center;
-  justify-content:center;
-}
-
-.img-popup img{
-  max-width:90%;
-  max-height:90%;
-  border-radius:16px;
-  box-shadow:0 10px 40px rgba(0,0,0,.6);
-}
-
-.close-btn{
-  position:absolute;
-  top:20px;
-  right:30px;
-  font-size:40px;
-  color:#fff;
-  cursor:pointer;
-  font-weight:bold;
-}
-
-#college-info, #about {
-    text-align: justify;
-}
-
-/* Announcement Bar */
-.announcement-bar{
-  width:100%;
-  background:#0b3c5d;
-  overflow:hidden;
-  white-space:nowrap;
-  position:sticky;
-  top:58px; /* nav height */
-  z-index:99;
-}
-
-/* Scroll Track */
-.announcement-track{
-  display:inline-flex;
-  gap:70px;
-  padding:10px 0;
-  animation:scroll-left 28s linear infinite;
-}
-
-/* ⏸ Hover to Pause */
-.announcement-bar:hover .announcement-track{
-  animation-play-state: paused;
-}
-
-/* Individual Alerts */
-.alert{
-  font-weight:600;
-  font-size:15px;
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
-
-/* 🎨 Alert Colors */
-.alert.normal{
-  color:#ffffff;
-}
-
-.alert.important{
-  color:#ffeb3b;
-}
-
-.alert.urgent{
-  color:#ff5252;
-}
-
-/* 🔔 Bell Animation */
-.bell{
-  display:inline-block;
-  animation:ring 1.5s infinite ease-in-out;
-}
-
-@keyframes ring{
-  0%{ transform:rotate(0deg); }
-  10%{ transform:rotate(15deg); }
-  20%{ transform:rotate(-15deg); }
-  30%{ transform:rotate(10deg); }
-  40%{ transform:rotate(-10deg); }
-  50%{ transform:rotate(0deg); }
-  100%{ transform:rotate(0deg); }
-}
-
-/* Scroll Animation */
-@keyframes scroll-left{
-  from{ transform:translateX(100%); }
-  to{ transform:translateX(-100%); }
-}
-
-/* Mobile */
-@media(max-width:600px){
-  .alert{
-    font-size:13px;
-  }
-}
-/* 🆕 NEW Flash Badge */
-.new-badge{
-  margin-left:10px;
-  padding:3px 10px;
-  background:#00e676;
-  color:#000;
-  font-size:12px;
-  font-weight:800;
-  border-radius:12px;
-  letter-spacing:1px;
-  animation:newFlash 1s infinite;
-  vertical-align:middle;
-}
-
-/* Flash Animation */
-@keyframes newFlash{
-  0%{
-    transform:scale(1);
-    opacity:1;
-  }
-  50%{
-    transform:scale(1.2);
-    opacity:.6;
-  }
-  100%{
-    transform:scale(1);
-    opacity:1;
-  }
-}
-
+    footer { background: var(--primary); color: white; padding: 60px 20px; text-align: center; }
+    .btn-apply { background: var(--secondary); color: var(--primary); padding: 15px 35px; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-block; }
   </style>
 </head>
 <body>
 
+<div class="social-float">
+  <a href="https://wa.me/916304088102" class="float-btn whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <a href="https://www.instagram.com/YOUR_COLLEGE_ID" class="float-btn instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+</div>
+
 <header>
-  <img src="LOGO.png" alt="College Logo">
-  <div>
-    <h1>ALNM'S Vyshnavi Women's Degree College Kanigiri</h1>
-    <p>Markapur District</p>
+  <img src="LOGO.png" alt="ALNM Logo">
+  <h1>ALNM'S Vyshnavi Women's Degree College</h1>
+  <p>Providing Quality Education for Women Since 2015</p>
+  <div style="margin-top: 25px;">
+    <a href="#contact" class="btn-apply">ENROLL FOR 2026</a>
   </div>
 </header>
 
 <nav>
   <a href="#about">About</a>
-  <a href="#principal">Principal</a>
+  <a href="#leadership">Leadership</a>
   <a href="#courses">Courses</a>
-  <a href="#staff">Staff</a>
-  <a href="#admissions">Admissions</a>
   <a href="#gallery">Gallery</a>
+  <a href="#news">News</a>
   <a href="#contact">Contact</a>
 </nav>
 
-
-<!-- Announcements Bar -->
-<div class="announcement-bar">
-  <div class="announcement-track">
-
-    <span class="alert normal">
-      <i class="bell">🔔</i> Admissions Open for 2026 Academic Year
-    </span>
-
-    <span class="alert important">
-      <i class="bell">🔔</i> Limited Seats Available – Apply Early
-    </span>
-
-    <span class="alert normal">
-      <i class="bell">🔔</i> B.Sc, B.Com & BCA Honours Courses
-    </span>
-
-    <span class="alert urgent">
-      <i class="bell">🔔</i> Contact Now: 6304088102 | 8328550713
-    </span>
-
-  </div>
+<div class="stats-bar">
+  <div class="stat-item"><h3>10+</h3><p>Years Experience</p></div>
+  <div class="stat-item"><h3>1000+</h3><p>Students Empowered</p></div>
+  <div class="stat-item"><h3>100%</h3><p>Safe Campus</p></div>
 </div>
-<div class="emergency-alert">
-  🚨 Admissions Open for 2026 Academic Year 
-  <span class="new-badge">NEW</span>
-</div>
+
 <section id="about">
-  <h2>About College</h2>
-  <p>ALNM'S Vyshnavi Women's Degree College, Kanigiri is committed to providing quality higher education for women, nurturing academic excellence, discipline, leadership and social responsibility.</p>
-</section>
-<section id="main">
-  <img src="group2.jpg" style="width:100%;" onclick="openPopup(this)">
-</section>
-  <section id="college-info">
-  <h2>College Information</h2>
-
-  <p>
-    <strong>ALNM'S Vyshnavi Women's Degree College</strong>, Kanigiri was
-    established in the year <strong>2015</strong> with a noble vision of
-    providing quality higher education to women and empowering them
-    academically, socially, and professionally.
-  </p>
-
-  <p>
-    Since its inception, the college has successfully guided and supported
-    <strong>hundreds of girl students</strong> in completing their
-    <strong>undergraduate degree education</strong>, helping them build
-    strong careers and responsible futures.
-  </p>
-
-  <p> 
-    The college is well-known for its <strong>disciplined academic
-    environment</strong>, <strong>excellent teaching standards</strong>,
-    and <strong>student-focused learning approach</strong>.
-    Special emphasis is given to conceptual understanding, practical
-    knowledge, and moral values.
-  </p>
-
-  <p>
-    <strong>Highly qualified and experienced faculty members</strong> form
-    the backbone of the institution. The staff is friendly, supportive,
-    and committed to guiding students both academically and personally.
-  </p>
-
-  <p>
-    The campus is equipped with a <strong>good and well-maintained college
-    building</strong>, spacious classrooms, peaceful surroundings, and
-    essential facilities that create a positive and safe learning
-    atmosphere for women students.
-  </p>
-</section>
-
-<section id="principal">
-  <h2>Correspondent & Principal </h2>
-
-  <div class="leaders">
-    
-
-    <!-- Correspondent -->
-    <div class="leader-card">
-      <img src="correspondent.jpg" alt="Correspondent Photo">
-      <h3>R.VIJAYA LAKSHMI</h3>
-      <p>Correspondent</p>
-      <p>
-        Our institution is committed to providing quality education
-        and a safe, encouraging environment for women.
-      </p>
+  <h2>Empowering the Future</h2>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center;">
+    <img src="group2.jpg" style="width:100%; border-radius: 20px; box-shadow: var(--shadow);">
+    <div>
+      <p>ALNM'S Vyshnavi Women's Degree College is committed to academic excellence. We focus on providing a secure and disciplined environment where young women can grow into leaders of tomorrow.</p>
+      <ul style="list-style: none; padding: 0;">
+        <li><i class="fas fa-check-circle" style="color:var(--secondary)"></i> Dedicated Female Faculty</li>
+        <li><i class="fas fa-check-circle" style="color:var(--secondary)"></i> Conceptual Learning</li>
+        <li><i class="fas fa-check-circle" style="color:var(--secondary)"></i> Career Guidance Programs</li>
+      </ul>
     </div>
   </div>
-  <!-- Principal -->
+</section>
+
+<section id="leadership">
+  <h2>Our Visionaries</h2>
+  <div class="leadership-grid">
     <div class="leader-card">
-      <img src="principal.jpg" alt="Principal Photo">
-      <h3>N.VENKATESWARLU</h3>
-      <p>Principal</p>
-      <p>
-        We strive to empower young women through holistic education,
-        strong moral values and career-oriented learning.
-      </p>
+      <img src="correspondent.jpg" alt="R. Vijaya Lakshmi">
+      <h3>R. Vijaya Lakshmi</h3>
+      <span class="designation">Correspondent</span>
+      <p>"Our institution is dedicated to providing quality education and a safe, encouraging environment for women to reach their highest potential."</p>
     </div>
+
+    <div class="leader-card">
+      <img src="principal.jpg" alt="N. Venkateswarlu">
+      <h3>N. Venkateswarlu</h3>
+      <span class="designation">Principal</span>
+      <p>"We strive to empower young women through holistic education, strong moral values, and career-oriented learning systems."</p>
+    </div>
+  </div>
 </section>
 
 <section id="courses">
-  <h2>Courses Offered</h2>
-  <ul class="courses">
-    <li>B.Sc Honours<br>(Computer Science)</li>
-    <li>B.Sc Honours<br>(Zoology)</li>
-    <li>B.Com Honours<br>(Computers)</li>
-    <li>BCA Honours<br>(Computer Applications)</li>
-  </ul>
-</section>
-
-<section id="staff">
-  <h2>Staff Details</h2>
-  <ul class="staff">
-    <li>Highly Qualified & Experienced Faculty</li>
-    <li>Student-Friendly Teaching Approach</li>
-    <li>Dedicated Teaching & Non-Teaching Staff</li>
-  </ul>
-</section>
-
-<section id="admissions">
-  <h2>Admissions Open</h2>
-  <div class="admissions-box">
-    Admissions are open for eligible candidates. Interested students are requested to visit the college campus or contact the office for complete admission guidance.
+  <h2>Honours Programs</h2>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
+    <div style="background:var(--light); padding:30px; border-radius:20px; text-align:center; border-bottom: 4px solid var(--primary);">
+      <i class="fas fa-laptop-code fa-3x" style="color:var(--primary); margin-bottom:15px;"></i>
+      <h3>B.Sc CS</h3>
+    </div>
+    <div style="background:var(--light); padding:30px; border-radius:20px; text-align:center; border-bottom: 4px solid var(--primary);">
+      <i class="fas fa-microscope fa-3x" style="color:var(--primary); margin-bottom:15px;"></i>
+      <h3>B.Sc Zoology</h3>
+    </div>
+    <div style="background:var(--light); padding:30px; border-radius:20px; text-align:center; border-bottom: 4px solid var(--primary);">
+      <i class="fas fa-calculator fa-3x" style="color:var(--primary); margin-bottom:15px;"></i>
+      <h3>B.Com</h3>
+    </div>
+    <div style="background:var(--light); padding:30px; border-radius:20px; text-align:center; border-bottom: 4px solid var(--primary);">
+      <i class="fas fa-code fa-3x" style="color:var(--primary); margin-bottom:15px;"></i>
+      <h3>BCA</h3>
+    </div>
   </div>
 </section>
 
 <section id="gallery">
   <h2>Campus Gallery</h2>
   <div class="gallery-wrapper">
-    <button class="scroll-btn left" onclick="scrollGallery(-1)">❮</button>
+    <button class="scroll-btn left" onclick="scrollG('campusGallery', -1)">❮</button>
     <div class="gallery" id="campusGallery">
-		<img src="College Building.png" onclick="openPopup(this)">
-  <img src="College board2 copy.jpg" onclick="openPopup(this)">
-  <img src="PAMPHLET 1 final.jpg" onclick="openPopup(this)">
-  <img src="
-PAMPHLET CENTER.jpg" onclick="openPopup(this)">
-  <img src="Pamphlet 3.2.jpg" onclick="openPopup(this)">
-  <img src="2.5 x10 flex (4).jpg" onclick="openPopup(this)">
-  <img src="4x10 flex 3 (2).jpg" onclick="openPopup(this)">
-</div>
-
-   <button class="scroll-btn left" onclick="scrollCampus(-1)">❮</button>
-<button class="scroll-btn right" onclick="scrollCampus(1)">❯</button>
-
+      <img src="College Building.png" onclick="openPopup(this)">
+      <img src="College board2 copy.jpg" onclick="openPopup(this)">
+      <img src="PAMPHLET CENTER.jpg" onclick="openPopup(this)">
+      <img src="Pamphlet 3.2.jpg" onclick="openPopup(this)">
+      <img src="2.5 x10 flex (4).jpg" onclick="openPopup(this)">
+    </div>
+    <button class="scroll-btn right" onclick="scrollG('campusGallery', 1)">❯</button>
   </div>
 </section>
 
-	<section id="gallery">
+<section id="news-events-section">
   <h2>News and Events</h2>
   <div class="gallery-wrapper">
-    <button class="scroll-btn left" onclick="scrollGallery(-1)">❮</button>
-    <div class="gallery" id="newsandevents">
-		<img src="2K WALK.jpeg" onclick="openPopup(this, 'newsandevents')">
-		<img src="2K WALK2.jpeg" onclick="openPopup(this, 'newsandevents')">
- <img src="sankranthi2026.jpeg" onclick="openPopup(this, 'newsandevents')">
-  <img src="bhogi news1.jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="chirstmas.jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="church center.jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="college fest news.jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="college fest news2.jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="college fest.jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="deepavali news.jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="deepavali.jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="holi news.jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="holi.jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="invetation.jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="muggu 1.jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="muggu2.jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="muggu3.jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="muggula poti.jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="pamphlet.jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="presentation.jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="rank.jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="rank2.jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="sankranthi news1.jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="sankranthi news2.jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="sankranthi news3.jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="sankranthi news4.jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="sankranthi1.jpg" onclick="openPopup(this, 'newsandevents')">
-<img src="sankranthi4.jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="semi chrismas 2.jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="semi christmas (2).jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="semi christmas.jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="skill news.jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="skill.jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="skill2.jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="ugra .jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="university news.jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="vanabhojanalu news.jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="vanabhojanalu.jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="varakatnam.jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="vc .jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="vc 2.jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="vc news.jpeg" onclick="openPopup(this, 'newsandevents')">
-<img src="vc pamplete.jpeg" onclick="openPopup(this, 'newsandevents')">
+    <button class="scroll-btn left" onclick="scrollGal('newsEventsGallery', -1)">❮</button>
+    
+    <div class="gallery" id="newsEventsGallery">
+      <img src="2K WALK.jpeg" onclick="openPopup(this)">
+      <img src="2K WALK2.jpeg" onclick="openPopup(this)">
+      <img src="sankranthi2026.jpeg" onclick="openPopup(this)">
+      <img src="bhogi news1.jpeg" onclick="openPopup(this)">
+      <img src="chirstmas.jpeg" onclick="openPopup(this)">
+      <img src="church center.jpeg" onclick="openPopup(this)">
+      <img src="college fest news.jpeg" onclick="openPopup(this)">
+      <img src="college fest news2.jpeg" onclick="openPopup(this)">
+      <img src="college fest.jpeg" onclick="openPopup(this)">
+      <img src="deepavali news.jpeg" onclick="openPopup(this)">
+      <img src="deepavali.jpeg" onclick="openPopup(this)">
+      <img src="holi news.jpeg" onclick="openPopup(this)">
+      <img src="holi.jpeg" onclick="openPopup(this)">
+      <img src="invetation.jpeg" onclick="openPopup(this)">
+      <img src="muggu 1.jpeg" onclick="openPopup(this)">
+      <img src="muggu2.jpeg" onclick="openPopup(this)">
+      <img src="muggu3.jpeg" onclick="openPopup(this)">
+      <img src="muggula poti.jpeg" onclick="openPopup(this)">
+      <img src="pamphlet.jpeg" onclick="openPopup(this)">
+      <img src="presentation.jpeg" onclick="openPopup(this)">
+      <img src="rank.jpeg" onclick="openPopup(this)">
+      <img src="rank2.jpeg" onclick="openPopup(this)">
+      <img src="sankranthi news1.jpeg" onclick="openPopup(this)">
+      <img src="sankranthi news2.jpeg" onclick="openPopup(this)">
+      <img src="sankranthi news3.jpeg" onclick="openPopup(this)">
+      <img src="sankranthi news4.jpeg" onclick="openPopup(this)">
+      <img src="sankranthi1.jpg" onclick="openPopup(this)">
+      <img src="sankranthi4.jpeg" onclick="openPopup(this)">
+      <img src="semi chrismas 2.jpeg" onclick="openPopup(this)">
+      <img src="semi christmas (2).jpeg" onclick="openPopup(this)">
+      <img src="semi christmas.jpeg" onclick="openPopup(this)">
+      <img src="skill news.jpeg" onclick="openPopup(this)">
+      <img src="skill.jpeg" onclick="openPopup(this)">
+      <img src="skill2.jpeg" onclick="openPopup(this)">
+      <img src="ugra .jpeg" onclick="openPopup(this)">
+      <img src="university news.jpeg" onclick="openPopup(this)">
+      <img src="vanabhojanalu news.jpeg" onclick="openPopup(this)">
+      <img src="vanabhojanalu.jpeg" onclick="openPopup(this)">
+      <img src="varakatnam.jpeg" onclick="openPopup(this)">
+      <img src="vc .jpeg" onclick="openPopup(this)">
+      <img src="vc 2.jpeg" onclick="openPopup(this)">
+      <img src="vc news.jpeg" onclick="openPopup(this)">
+      <img src="vc pamplete.jpeg" onclick="openPopup(this)">
+    </div>
 
-		
-</div>
-
-    <button class="scroll-btn left" onclick="scrollNews(-1)">❮</button>
-<button class="scroll-btn right" onclick="scrollNews(1)">❯</button>
-
+    <button class="scroll-btn right" onclick="scrollGal('newsEventsGallery', 1)">❯</button>
   </div>
 </section>
 
-
 <section id="contact">
-  <h2>Contact & Location</h2>
-  <p><strong>Address:</strong> MSR Road, Kanigiri, Prakasam District, Andhra Pradesh</p>
-  <p><strong>Phone:</strong> 6304088102, 8328550713</p>
-  <p><strong>Affiliation:</strong> Affiliated to Andhra Kesari University</p>
-  <a class="btn" href="https://wa.me/916304088102" target="_blank">📞 WhatsApp Us</a>
-  <iframe src="https://www.google.com/maps?q=Kanigiri,Prakasam,Andhra%20Pradesh&output=embed" height="320"></iframe>
+  <h2>Contact Us</h2>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+    <div style="background: var(--light); padding: 30px; border-radius: 20px;">
+      <p><i class="fas fa-phone"></i> 6304088102, 8328550713</p>
+      <p><i class="fas fa-map-marker-alt"></i> MSR Road, Kanigiri, Prakasam Dist, A.P.</p>
+      <a href="https://wa.me/916304088102" class="btn-apply" style="width:100%; text-align:center; margin-top:15px;">Message on WhatsApp</a>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.465431627!2d79.30!3d15.41!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTXCsDI0JzM2LjAiTiA3OcKwMTgnMDAuMCJF!5e0!3m2!1sen!2sin!4v1640000000000" width="100%" height="250" style="border:0; border-radius:20px;"></iframe>
+  </div>
 </section>
 
-	<!-- Image Popup -->
-<div id="imgPopup" class="img-popup" onclick="closePopup()">
-  <span class="close-btn">&times;</span>
-  <img id="popupImg" src="">
+<div id="imgPopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; align-items:center; justify-content:center;" onclick="this.style.display='none'">
+  <img id="popupImg" style="max-width:90%; max-height:85%; border: 4px solid white; border-radius: 10px;">
 </div>
 
 <footer>
   <p>© 2026 ALNM'S Vyshnavi Women's Degree College, Kanigiri</p>
+  <div style="margin-top:15px;">
+    <a href="#" style="color:white; margin:0 10px;"><i class="fab fa-facebook fa-lg"></i></a>
+    <a href="#" style="color:white; margin:0 10px;"><i class="fab fa-instagram fa-lg"></i></a>
+  </div>
 </footer>
-	
+
 <script>
-function scrollCampus(dir){
-  document.getElementById("campusGallery")
-    .scrollBy({ left: dir * 400, behavior: "smooth" });
+  function scrollG(id, dir) {
+    document.getElementById(id).scrollBy({ left: dir * 350, behavior: 'smooth' });
+  }
+  function openPopup(img) {
+    document.getElementById("imgPopup").style.display = "flex";
+    document.getElementById("popupImg").src = img.src;
+  }
+  function scrollGal(id, direction) {
+  const gallery = document.getElementById(id);
+  const scrollAmount = 350; // Scroll distance adjustment
+  gallery.scrollBy({
+    left: direction * scrollAmount,
+    behavior: "smooth"
+  });
 }
 
-function scrollNews(dir){
-  document.getElementById("newsandevents")
-    .scrollBy({ left: dir * 400, behavior: "smooth" });
-}
-
-function openPopup(img){
+function openPopup(img) {
   const popup = document.getElementById("imgPopup");
   const popupImg = document.getElementById("popupImg");
   popup.style.display = "flex";
   popupImg.src = img.src;
-}
-
-function closePopup(){
-  document.getElementById("imgPopup").style.display = "none";
 }
 </script>
 
