@@ -269,8 +269,14 @@
   </div>
 </section>
 
-<div id="imgPopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; align-items:center; justify-content:center;" onclick="this.style.display='none'">
-  <img id="popupImg" style="max-width:90%; max-height:85%; border: 4px solid white; border-radius: 10px;">
+<div id="imgPopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; align-items:center; justify-content:center;">
+  <span onclick="closePopup()" style="position:absolute; top:20px; right:30px; color:white; font-size:40px; cursor:pointer; font-weight:bold; z-index:10001;">&times;</span>
+  
+  <button onclick="changeImg(-1)" style="position:absolute; left:20px; background:rgba(255,255,255,0.2); color:white; border:none; padding:15px; cursor:pointer; border-radius:50%; font-size:24px; z-index:10001;"><i class="fas fa-chevron-left"></i></button>
+  
+  <img id="popupImg" style="max-width:85%; max-height:80%; border: 4px solid white; border-radius: 10px; transition: transform 0.3s ease;">
+  
+  <button onclick="changeImg(1)" style="position:absolute; right:20px; background:rgba(255,255,255,0.2); color:white; border:none; padding:15px; cursor:pointer; border-radius:50%; font-size:24px; z-index:10001;"><i class="fas fa-chevron-right"></i></button>
 </div>
 
 <footer>
@@ -282,28 +288,61 @@
 </footer>
 
 <script>
+  let currentImgIndex = 0;
+  let allImages = [];
+
+  // Page load ayyeppudu gallery lo unna anni photos ni oka list (array) la collect chestundhi
+  function updateImageList() {
+    const galleryImgs = document.querySelectorAll('.gallery img');
+    allImages = Array.from(galleryImgs).map(img => img.src);
+  }
+
+  // Initial load
+  window.onload = updateImageList;
+
+  function openPopup(img) {
+    updateImageList(); // Latest images list ni refresh chestundhi
+    const popup = document.getElementById("imgPopup");
+    const popupImg = document.getElementById("popupImg");
+    
+    // Click chesina image index ni kanukkuntundhi
+    currentImgIndex = allImages.indexOf(img.src);
+    
+    popup.style.display = "flex";
+    popupImg.src = allImages[currentImgIndex];
+  }
+
+  function closePopup() {
+    document.getElementById("imgPopup").style.display = "none";
+  }
+
+  function changeImg(step) {
+    currentImgIndex += step;
+    
+    // Gallery limits check (Looping logic)
+    if (currentImgIndex >= allImages.length) currentImgIndex = 0;
+    if (currentImgIndex < 0) currentImgIndex = allImages.length - 1;
+    
+    document.getElementById("popupImg").src = allImages[currentImgIndex];
+  }
+
+  // Gallery Horizontal Scroll Logic
   function scrollG(id, dir) {
     document.getElementById(id).scrollBy({ left: dir * 350, behavior: 'smooth' });
   }
-  function openPopup(img) {
-    document.getElementById("imgPopup").style.display = "flex";
-    document.getElementById("popupImg").src = img.src;
-  }
+  
   function scrollGal(id, direction) {
-  const gallery = document.getElementById(id);
-  const scrollAmount = 350; // Scroll distance adjustment
-  gallery.scrollBy({
-    left: direction * scrollAmount,
-    behavior: "smooth"
-  });
-}
+    document.getElementById(id).scrollBy({ left: direction * 350, behavior: "smooth" });
+  }
 
-function openPopup(img) {
-  const popup = document.getElementById("imgPopup");
-  const popupImg = document.getElementById("popupImg");
-  popup.style.display = "flex";
-  popupImg.src = img.src;
-}
+  // Keyboard navigation (Optional but very useful)
+  document.onkeydown = function(e) {
+    if (document.getElementById("imgPopup").style.display === "flex") {
+      if (e.key === "ArrowLeft") changeImg(-1);
+      if (e.key === "ArrowRight") changeImg(1);
+      if (e.key === "Escape") closePopup();
+    }
+  };
 </script>
 
 </body>
